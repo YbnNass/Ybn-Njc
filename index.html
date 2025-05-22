@@ -1,166 +1,406 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YBN - New Jack City</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body, html {
-      height: 100%;
-      font-family: 'Anton', sans-serif;
-      background: url('https://i.imgur.com/VPQ6z7f.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-shadow: 2px 2px 6px #000;
-    }
-    header {
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    header img {
-      width: 180px;
-      height: auto;
-      margin-bottom: 15px;
-    }
-    h1 {
-      font-size: 3.5rem;
-      letter-spacing: 5px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      font-weight: 500;
-    }
-    .btn-qcm {
-      background-color: #e63946;
-      color: white;
-      font-weight: 700;
-      font-size: 1.4rem;
-      padding: 15px 50px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(230,57,70,0.6);
-      transition: background-color 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-qcm:hover {
-      background-color: #d62828;
-    }
-    footer {
-      position: fixed;
-      bottom: 15px;
-      font-size: 0.9rem;
-      color: #ccc;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ybn-Njc RP - Whitelist</title>
+<style>
+  body {
+    background: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+  }
+  header {
+    background: #1e1e1e;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header img {
+    height: 40px;
+  }
+  nav a {
+    color: #eee;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  nav a.active {
+    color: #f90;
+    border-bottom: 2px solid #f90;
+  }
+  main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .btn-discord {
+    background: #7289da;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  h1, h2 {
+    margin-top: 0;
+  }
+  .pre-requis {
+    background: #222;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+  }
+  /* QCM styles */
+  form {
+    background: #222;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  fieldset {
+    border: none;
+    margin-bottom: 20px;
+  }
+  legend {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  button[type="submit"] {
+    background: #f90;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <img src="https://i.imgur.com/IaXB7Lu.png" alt="Logo YBN x NJC" />
-    <h1>YBN - New Jack City</h1>
-    <p>
-      Wassup Bro, bienvenue sur YBN x NJC.<br />
-      Ici c’est l’univers RP US hardcore : mentalité de rue, respect des codes, immersion totale.<br />
-      Avant d’entrer en vocal, remplis le QCM pour prouver que t’as capté la vibe.<br />
-      Only real ones, only serious RP.
-    </p>
-  </header>
-  <a href="qcm.html" class="btn-qcm">Passer le QCM</a>
-  <footer>
-    © 2025 YBN x New Jack City
-  </footer>
+
+<header>
+  <img src="https://i.imgur.com/dRr5RVQ.png" alt="Ybn-Njc Logo" />
+  <nav>
+    <a href="#" id="link-home" class="active">Accueil</a>
+    <a href="#" id="link-wl">Whitelist</a>
+  </nav>
+</header>
+
+<main id="content">
+
+  <!-- PAGE ACCUEIL -->
+  <section id="home-page">
+    <h1>Ybn-Njc RP</h1>
+    <p><strong>Server Menta US - No Modération IG - WL +18 - Staff Réactif et Strict</strong></p>
+    <a href="https://discord.gg/46fmEXcwwD" target="_blank" class="btn-discord">Rejoins notre Discord</a>
+
+    <div class="pre-requis">
+      <h2>Pré-requis pour la whitelist</h2>
+      <ul>
+        <li>Être majeur (+18 ans)</li>
+        <li>Avoir un bon micro</li>
+        <li>Connaissance minimum de la mentalité US RP</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PAGE WHITELIST -->
+  <section id="wl-page" style="display:none;">
+    <h1>Whitelist - QCM RP</h1>
+    <form id="qcm-form">
+      <!-- QUESTIONS INSÉRÉES VIA JS -->
+      <button type="submit">Valider le QCM</button>
+    </form>
+    <div class="result" id="result"></div>
+  </section>
+
+</main>
+
+<script>
+// Questions + réponses + index de la bonne réponse (0-based)
+const questions = [
+  {
+    question: "À quoi correspond le terme Selfishness RP ?",
+    answers: [
+      "Un terme pour l'usage d'armes dans une scène de combat",
+      "Un langage secret entre joueurs",
+      "rp Individualiste",
+      "L'utilisation d'informations hors RP par un personnage"
+    ],
+    correct: 2
+  },
+  {
+    question: "Qu'est-ce que le \"powergaming\" ?",
+    answers: [
+      "Utiliser des informations HRP pour obtenir un avantage",
+      "Utiliser des moyens irréalistes pour accomplir des actions",
+      "Le fait de se reposer sur d'autres joueurs",
+      "Une approche coopérative pour le jeu de groupe"
+    ],
+    correct: 1
+  },
+  {
+    question: "Dans une situation RP, ton personnage est blessé. Que fais-tu pour respecter le RP ?",
+    answers: [
+      "Continuer comme si de rien n'était",
+      "Appeler immédiatement à l'aide sans émettre de douleur",
+      "Rester au sol et simuler la douleur de manière réaliste",
+      "Quitter le serveur"
+    ],
+    correct: 2
+  },
+  {
+    question: "Le \"Fear RP\" signifie :",
+    answers: [
+      "Ne jamais faire peur aux autres joueurs",
+      "Jouer avec une logique de peur face aux dangers",
+      "Ne pas montrer d'émotions",
+      "Affronter les autres sans jamais fuir"
+    ],
+    correct: 1
+  },
+  {
+    question: "Quelle est l'attitude correcte face à un \"perma-death\" ?",
+    answers: [
+      "Recréer immédiatement son personnage",
+      "Reprendre le même personnage sous une autre identité",
+      "Accepter la mort définitive du personnage",
+      "Changer de serveur pour éviter cette perte"
+    ],
+    correct: 2
+  },
+  {
+    question: "Quelle est l'action typique d'un \"cop-baiting\" ?",
+    answers: [
+      "Attaquer les PNJ sans raison",
+      "Provoquer intentionnellement les forces de l'ordre",
+      "Appeler des amis pour se battre contre la police",
+      "Ignorer les forces de l'ordre"
+    ],
+    correct: 1
+  },
+  {
+    question: "Si tu es confronté à un \"random deathmatch\" (RDM), que dois-tu faire ?",
+    answers: [
+      "Répondre par la violence",
+      "Appeler des amis pour se défendre",
+      "Ignorer l'attaque et la signaler aux admins",
+      "Quitter la scène immédiatement"
+    ],
+    correct: 2
+  },
+  {
+    question: "Que signifie \"passive RP\" ?",
+    answers: [
+      "Ignorer les autres joueurs",
+      "Jouer des scènes sans conflits directs",
+      "Éviter les dialogues",
+      "Se concentrer uniquement sur les actions de combat"
+    ],
+    correct: 1
+  },
+  {
+    question: "Quel est le terme pour l'utilisation de commandes texte pour décrire des actions ?",
+    answers: [
+      "Powergaming",
+      "Emote RP",
+      "Meta RP",
+      "Chat RP"
+    ],
+    correct: 1
+  },
+  {
+    question: "Le \"Fear RP\" impose au joueur de :",
+    answers: [
+      "Réagir comme si son personnage n'avait jamais peur",
+      "Affronter tous les dangers sans hésitation",
+      "Agir de façon prudente en cas de menace de vie",
+      "Utiliser des armes dès qu'il y a un danger"
+    ],
+    correct: 2
+  },
+  {
+    question: "Dans un RP \"US\" immersif, les termes policiers doivent être utilisés de manière réaliste. Quel terme est correct pour désigner un agent ?",
+    answers: [
+      "Officer",
+      "Policeman",
+      "Sheriff",
+      "Mr l'agent"
+    ],
+    correct: 0
+  },
+  {
+    question: "Que signifie \"void\" dans une scène RP ?",
+    answers: [
+      "Effacer ou annuler une scène",
+      "Recommencer un personnage",
+      "Ignorer un message",
+      "Envoyer des informations HRP"
+    ],
+    correct: 0
+  },
+  {
+    question: "Dans une situation de prise d'otage, que doivent éviter les joueurs ?",
+    answers: [
+      "De faire de longues négociations",
+      "De faire preuve de Fear RP",
+      "De recourir à l'arme rapidement",
+      "D'utiliser des informations HRP"
+    ],
+    correct: 3
+  },
+  {
+    question: "Que veut dire \"PK\" (Player Kill) ?",
+    answers: [
+      "Mort définitive d’un personnage",
+      "Mort temporaire nécessitant soins",
+      "Exclusion du serveur",
+      "Vol d'argent et d'objets"
+    ],
+    correct: 0
+  },
+  {
+    question: "Le terme \"RP immersif\" signifie que :",
+    answers: [
+      "Les joueurs jouent comme dans la vraie vie",
+      "Le serveur propose beaucoup de mods",
+      "Le RP est uniquement pour les policiers",
+      "On joue sans aucun dialogue"
+    ],
+    correct: 0
+  },
+  {
+    question: "Comment réagir en cas de conflit RP avec un autre joueur ?",
+    answers: [
+      "Ignorer et continuer le jeu",
+      "Sortir du serveur immédiatement",
+      "Gérer le conflit en jeu, rester respectueux",
+      "Utiliser des insultes HRP"
+    ],
+    correct: 2
+  },
+  {
+    question: "Que signifie \"Meta Gaming\" ?",
+    answers: [
+      "Utiliser des infos RP pour s’améliorer",
+      "Utiliser des infos HRP dans le jeu RP",
+      "Parler uniquement avec ses amis",
+      "Créer un personnage secondaire"
+    ],
+    correct: 1
+  },
+  {
+    question: "Quelle est la meilleure façon de communiquer en RP ?",
+    answers: [
+      "Parler en /me et chat RP",
+      "Envoyer des messages HRP",
+      "Utiliser uniquement le chat vocal",
+      "Ignorer les autres joueurs"
+    ],
+    correct: 0
+  },
+  {
+    question: "Le terme \"No Pixel\" fait référence à :",
+    answers: [
+      "Un style de pixel art",
+      "Un célèbre serveur RP US",
+      "Un bug graphique",
+      "Une technique de combat"
+    ],
+    correct: 1
+  },
+  // ... Ajoute ici les autres questions jusqu'à 40 ...
+];
+
+// Génération des questions dans le formulaire
+const form = document.getElementById('qcm-form');
+
+questions.forEach((q, i) => {
+  const fieldset = document.createElement('fieldset');
+  const legend = document.createElement('legend');
+  legend.textContent = `${i + 1}. ${q.question}`;
+  fieldset.appendChild(legend);
+
+  q.answers.forEach((ans, j) => {
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = `q${i}`;
+    input.value = j;
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(ans));
+    fieldset.appendChild(label);
+  });
+
+  form.insertBefore(fieldset, form.querySelector('button'));
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  let score = 0;
+  for (let i = 0; i < questions.length; i++) {
+    const selected = form.querySelector(`input[name=q${i}]:checked`);
+    if (!selected) {
+      alert(`Question ${i + 1} non répondue.`);
+      return;
+    }
+    if (parseInt(selected.value, 10) === questions[i].correct) {
+      score++;
+    }
+  }
+
+  const resultDiv = document.getElementById('result');
+  if (score >= 38) {
+    resultDiv.style.color = '#4caf50';
+    resultDiv.textContent = `✅ Félicitations ! Vous avez obtenu ${score} / ${questions.length}. Vous êtes whitelisté.`;
+  } else {
+    resultDiv.style.color = '#f44336';
+    resultDiv.textContent = `❌ Vous avez obtenu ${score} / ${questions.length}. Il vous faut au moins 38 bonnes réponses pour être whitelisté.`;
+  }
+});
+
+// Gestion simple des pages
+const linkHome = document.getElementById('link-home');
+const linkWL = document.getElementById('link-wl');
+const homePage = document.getElementById('home-page');
+const wlPage = document.getElementById('wl-page');
+
+linkHome.onclick = e => {
+  e.preventDefault();
+  homePage.style.display = 'block';
+  wlPage.style.display = 'none';
+  linkHome.classList.add('active');
+  linkWL.classList.remove('active');
+};
+linkWL.onclick = e => {
+  e.preventDefault();
+  homePage.style.display = 'none';
+  wlPage.style.display = 'block';
+  linkWL.classList.add('active');
+  linkHome.classList.remove('active');
+};
+</script>
+
 </body>
 </html>
-
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Whitelist - QCM YBN x NJC</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #111;
-      color: #eee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 30px 10px;
-    }
-    header {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 8px;
-    }
-    header p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 25px;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      max-width: 700px;
-      height: 1050px;
-      box-shadow: 0 0 30px #e63946aa;
-      border-radius: 12px;
-    }
-    footer {
-      margin-top: 30px;
-      font-size: 0.85rem;
-      color: #999;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-align: center;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Whitelist - QCM YBN x NJC</h1>
-    <p>Réponds aux questions pour prouver ta connaissance du RP mentalité US et valider ta whitelist.</p>
-  </header>
-
-  <!-- Intégration du Google Form (remplace l'URL par le tien si besoin) -->
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer5eZfdfHBGG6JZFKrpAMXMmz1GIqMnvLc0pMMhGVdZ_ogRg/viewform?embedded=true" 
-          allowfullscreen
-          loading="lazy">
-  </iframe>
-
-  <footer>
-    © 2025 YBN x New Jack City - Only real RP
-  </footer>
-</body>
-</html>
-
