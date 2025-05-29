@@ -2,93 +2,535 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YBN - New Jack City</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YBN x NewJackCity</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background-color: #0f0f0f;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 0;
+      font-family: 'Urbanist', sans-serif;
+      background: url('<a href="https://ibb.co/m56PjRg4"><img src="https://i.ibb.co/HTn9SK3q/ybn-njc.png" alt="ybn-njc" border="0"></a>') no-repeat center center fixed;
+      background-size: cover;
+      color: #D9D9D9;
     }
 
     header {
-      text-align: center;
-      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #000;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
     }
 
     header img {
-      max-width: 200px;
-      margin-bottom: 1rem;
+      width: 70px;
+      height: auto;
+      margin-right: 15px;
     }
 
-    h1 {
-      font-size: 2.5rem;
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
       margin: 0;
     }
 
-    p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 1rem auto;
-      line-height: 1.5;
+    header h1 .ybn {
+      color: #FFFFFF;
     }
 
-    .btn-container {
-      margin: 2rem;
+    header h1 .njc {
+      color: #FFD700;
     }
 
-    .btn {
-      padding: 15px 30px;
-      background-color: #ff3c00;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #FFD700;
       text-decoration: none;
-      transition: 0.3s ease;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
     }
 
-    .btn:hover {
-      background-color: #ff2200;
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .discord-login {
+      background-color: #7289DA;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      display: none;
+      margin-bottom: 60px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #FFD700;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    section img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      height: 400px;
     }
 
     iframe {
-      width: 90%;
-      height: 1000px;
+      width: 100%;
+      height: 800px;
       border: none;
-      margin-bottom: 4rem;
-      max-width: 900px;
+      border-radius: 10px;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .discord-login {
+        margin-top: 10px;
+      }
+      section img {
+        height: 250px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/CuYiKPG.png" alt="Logo YBN - NJC">
-    <h1>YBN × New Jack City</h1>
-    <p>Wassup bro 👋 Bienvenue sur le serveur <strong>YBN × NJC</strong>.<br>Avant de passer en vocal avec le staff, merci de remplir ce QCM pour valider ta whitelist !<br>Sois précis, respecte la mentalité US et montre que t’es prêt pour la rue.</p>
-    <div class="btn-container">
-      <a class="btn" href="https://discord.gg/tonliendiscord" target="_blank">Accès vocal Discord 🔊</a>
+    <div class="header-left">
+      <div class="logo-title">
+        <img src="https://i.ibb.co/Xf2MNWvv/LOGO-NJC-1.png" alt="Logo YBN New Jack City" />
+        <h1><span class="ybn">YBN</span> x <span class="njc">NewJackCity</span> 🗽</h1>
+      </div>
+      <nav>
+        <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
+        <a href="#whitelist" onclick="showSection('whitelist')">Whitelist</a>
+        <a href="https://discord.gg/tonliendiscord" target="_blank">Discord</a>
+      </nav>
     </div>
+    <a id="loginBtn" class="discord-login" href="#">Connexion</a>
   </header>
 
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSer5eZfdfHBGG6JZFKrpAMXMmz1GIqMnvLc0pMMhGVdZ_ogRg/viewform?embedded=true" allowfullscreen loading="lazy">Chargement…</iframe>
+  <main>
+    <section id="accueil" class="active">
+      <h2>Bienvenue à New Jack City</h2>
+      <img src="https://ibb.co/bjrT0dM6" alt="Vue New York City" />
+      <p>
+        Bienvenue à New Jack City, une expérience GTA RP pensée pour les passionnés de rôle-play authentique et immersif. Ici, la mentalité US est au cœur de chaque interaction, offrant une atmosphère réaliste et engagée où chaque joueur a un rôle à jouer.
+      </p>
+      <p>
+        New Jack City propose une économie réaliste et dynamique, conçue pour refléter les véritables mécanismes d’une ville vivante. Chaque action, qu’il s’agisse d’un business légal ou d’activités plus risquées, impacte directement le monde qui vous entoure. Le travail, la stratégie et la loyauté sont les clés pour progresser dans cet univers exigeant.
+      </p>
+      <p>
+        Le Roleplay civil est fondamental à New Jack City. Que vous incarniez un citoyen, un policier, ou un membre d’un gang, votre immersion et votre implication dans la vie civile sont primordiales. Le RP ne se limite pas à la violence ou aux conflits : il passe par des interactions riches, des relations authentiques et un respect des codes qui définissent une vraie communauté.
+      </p>
+      <p>
+        Pour garantir une qualité de jeu optimale, l’accès au serveur se fait via un processus de whitelist rigoureux. Ce dernier inclut un questionnaire permettant d’évaluer votre compréhension des règles, de l’univers RP et des exigences du serveur. Une fois validé, un entretien vocal avec un membre du staff vous sera proposé afin de finaliser votre intégration.
+      </p>
+      <p>
+        Nous vous invitons à rejoindre New Jack City si vous êtes prêts à vous investir dans un projet sérieux, où la profondeur du rôle, la cohérence économique et l’immersion sont au centre de l’expérience.
+      </p>
+    </section>
 
-  <footer>
-    &copy; 2025 YBN × NJC — Tous droits réservés.
-  </footer>
+    <section id="whitelist">
+      <h2>📝 Formulaire Whitelist</h2>
+      <img src="https://ibb.co/bjrT0dM6" alt="New York City" />
+      <p>Remplis le QCM ci-dessous pour prouver que tu connais les règles, le RP et l’univers. Si tu valides, tu passeras en vocal avec le staff pour obtenir ton rôle sur Discord.</p>
+      
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0a0a0a;
+      color: #D9D9D9;
+      padding: 40px;
+    }
+    h1 {
+      color: #FFD700;
+    }
+    form {
+      max-width: 800px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: #1a1a1a;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 4px;
+    }
+    textarea {
+      height: 100px;
+    }
+    .question {
+      margin-top: 30px;
+    }
+    input[type="submit"] {
+      background-color: #FFD700;
+      color: black;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #e6c200;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formulaire Whitelist - New Jack City</h1>
+  <form>
+    <label for="discordName">Nom Discord *</label>
+    <input type="text" id="discordName" name="discordName" required>
+
+    <label for="rpName">Nom et prénom RP *</label>
+    <input type="text" id="rpName" name="rpName" required>
+
+    <label for="backstory">Backstory *</label>
+    <textarea id="backstory" name="backstory" required></textarea>
+<div class="question"><label for="q1">1. À quoi correspond le terme Selfishness RP *</label><select name="q1" id="q1" required><option value="Un langage secret entre joueurs">Un langage secret entre joueurs</
+option><option value="L'utilisation d'informations hors RP par un personnage">L'utilisation d'informations hors RP par un personnage</option><option value="RP Individualiste">RP Individualiste</option><option
+value="Un terme pour l'usage d'armes dans une scène de combat">Un terme pour l'usage d'armes dans une scène de combat</option></select></div><div class="question"><label for="q2">2. Qu'est-ce que le "powergaming" ?
+*</label><select name="q2" id="q2" required><option value="Utiliser des informations HRP pour obtenir un avantage">Utiliser des informations HRP pour obtenir un avantage</option><option value="Utiliser des moyens 
+irréalistes pour accomplir des actions">Utiliser des moyens irréalistes pour accomplir des actions</option><option value="Le fait de se reposer sur d'autres joueurs">Le fait de se reposer sur d'autres joueurs</
+option><option value="Une approche coopérative pour le jeu de groupe">Une approche coopérative pour le jeu de groupe</option></select></div><div class="question"><label for="q3">3. Dans une situation RP, ton 
+personnage est blessé. Que fais-tu pour respecter le RP ? *</label><select name="q3" id="q3" required><option value="Continuer comme si de rien n'était">Continuer comme si de rien n'était</option><option 
+value="Appeler immédiatement à l'aide sans émettre de douleur">Appeler immédiatement à l'aide sans émettre de douleur</option><option value="Rester au sol et simuler la douleur de manière réaliste">Rester au sol et
+simuler la douleur de manière réaliste</option><option value="Quitter le serveur">Quitter le serveur</option></select></div><div class="question"><label for="q4">4. Le "Fear RP" signifie : *</label><select name="q4"
+id="q4" required><option value="Ne jamais faire peur aux autres joueurs">Ne jamais faire peur aux autres joueurs</option><option value="Jouer avec une logique de peur face aux dangers">Jouer avec une logique de peur
+face aux dangers</option><option value="Ne pas montrer d'émotions">Ne pas montrer d'émotions</option><option value="Affronter les autres sans jamais fuir">Affronter les autres sans jamais fuir</option></select></
+div><div class="question"><label for="q5">5. Quelle est l'attitude correcte face à un "perma-death" ? *</label><select name="q5" id="q5" required><option value="Recréer immédiatement son personnage">Recréer
+immédiatement son personnage</option><option value="Reprendre le même personnage sous une autre identité">Reprendre le même personnage sous une autre identité</option><option value="Accepter la mort définitive du
+personnage">Accepter la mort définitive du personnage</option><option value="Changer de serveur pour éviter cette perte">Changer de serveur pour éviter cette perte</option></select></div><div class="question"><label
+for="q6">6. Quelle est l'action typique d'un "cop-baiting" ? *</label><select name="q6" id="q6" required><option value="Attaquer les PNJ sans raison">Attaquer les PNJ sans raison</option><option value="Provoquer
+intentionnellement les forces de l'ordre">Provoquer intentionnellement les forces de l'ordre</option><option value="Appeler des amis pour se battre contre la police">Appeler des amis pour se battre contre la police</
+option><option value="Ignorer les forces de l'ordre">Ignorer les forces de l'ordre</option></select></div><div class="question"><label for="q7">7. Si tu es confronté à un "random deathmatch" (RDM), que dois-tu 
+faire ? *</label><select name="q7" id="q7" required><option value="Répondre par la violence">Répondre par la violence</option><option value="Appeler des amis pour se défendre">Appeler des amis pour se défendre</
+option><option value="Ignorer l'attaque et la signaler aux admins">Ignorer l'attaque et la signaler aux admins</option><option value="Quitter la scène immédiatement">Quitter la scène immédiatement</option></select></
+div><div class="question"><label for="q8">8. Que signifie "passive RP" ? *</label><select name="q8" id="q8" required><option value="Ignorer les autres joueurs">Ignorer les autres joueurs</option><option value="Jouer
+des scènes sans conflits directs">Jouer des scènes sans conflits directs</option><option value="Éviter les dialogues">Éviter les dialogues</option><option value="Se concentrer uniquement sur les actions de
+combat">Se concentrer uniquement sur les actions de combat</option></select></div><div class="question"><label for="q9">9. Quel est le terme pour l'utilisation de commandes texte pour décrire des actions ? *</
+label><select name="q9" id="q9" required><option value="Powergaming">Powergaming</option><option value="Emote RP">Emote RP</option><option value="Meta RP">Meta RP</option><option value="Chat RP">Chat RP</option></
+select></div><div class="question"><label for="q10">10. Le "Fear RP" impose au joueur de : *</label><select name="q10" id="q10" required><option value="Réagir comme si son personnage n'avait jamais peur">
+Réagir comme si son personnage n'avait jamais peur</option><option value="Affronter tous les dangers sans hésitation">Affronter tous les dangers sans hésitation</option><option value="Agir de façon prudente en cas de
+menace de vie">Agir de façon prudente en cas de menace de vie</option><option value="Utiliser des armes dès qu'il y a un danger">Utiliser des armes dès qu'il y a un danger</option></select></div><div 
+class="question"><label for="q11">11. Dans un RP "US" immersif, les termes policiers doivent être utilisés de manière réaliste. Quel terme est correct pour désigner un agent ? *</label><select name="q11" id="q11"
+required><option value="Officer">Officer</option><option value="Policeman">Policeman</option><option value="Sheriff">Sheriff</option><option value="Mr l'agent">Mr l'agent</option></select></div><div 
+class="question"><label for="q12">12. Que signifie "void" dans une scène RP ? *</label><select name="q12" id="q12" required><option value="Effacer ou annuler une scène">Effacer ou annuler une scène</option><option 
+value="Recommencer un personnage">Recommencer un personnage</option><option value="Ignorer un message">Ignorer un message</option><option value="Envoyer des informations HRP">Envoyer des informations 
+HRP</option></select></div><div class="question"><label for="q13">13. Dans une situation de prise d'otage, que doivent éviter les joueurs ? *</label><select name="q13" id="q13" required><option 
+value="De faire de longues négociations">De faire de longues négociations</option><option value="De faire preuve de Fear RP">De faire preuve de Fear RP</option><option value="De recourir à l'arme rapidement"
+>De recourir à l'arme rapidement</option><option value="D'utiliser des informations HRP">D'utiliser des informations HRP</option></select></div><div class="question"><label for="q14">14. Que veut dire "PK" 
+(Player Kill) ? *</label><select name="q14" id="q14" required><option value="Mort définitive d’un personnage">Mort définitive d’un personnage</option><option value="Mort temporaire nécessitant soins"
+>Mort temporaire nécessitant soins</option><option value="Exclusion du serveur">Exclusion du serveur</option><option value="Vol d'argent et d'objets">Vol d'argent et d'objets</option></select></div><div 
+class="question"><label for="q15">15. Le terme "RP immersif" signifie que : *</label><select name="q15" id="q15" required><option value="Les joueurs doivent impliquer des actions HRP">Les joueurs doivent impliquer 
+des actions HRP</option><option value="Les interactions doivent paraître naturelles et réalistes">Les interactions doivent paraître naturelles et réalistes</option><option value="Tous les personnages doivent 
+être héroïques">Tous les personnages doivent être héroïques</option><option value="Les scènes doivent être rapides et simples">Les scènes doivent être rapides et simples</option></select></div><div 
+class="question"><label for="q16">16. Que signifie HRP (hors roleplay) ? *</label><select name="q16" id="q16" required><option value="Respecter les règles RP en jeu">Respecter les règles RP en jeu</option><option 
+value="Utiliser des informations de jeu">Utiliser des informations de jeu</option><option value="Parler en dehors du personnage">Parler en dehors du personnage</option><option value="Activer des pouvoirs spéciaux"
+>Activer des pouvoirs spéciaux</option></select></div><div class="question"><label for="q17">17. Que doit faire un joueur s’il doit quitter une scène importante en urgence ? *</label><select name="q17" id="q17" 
+required><option value="Quitter sans prévenir">Quitter sans prévenir</option><option value="Faire une emote pour expliquer">Faire une emote pour expliquer</option><option 
+value="Informé le staff">Informé le staff</option><option value="Mettre sur pause et revenir plus tard">Mettre sur pause et revenir plus tard</option></select></div><div 
+class="question"><label for="q18">18. Dans un serveur immersif, le "combat log" est : *</label><select name="q18" id="q18" required><option value="Quitter une scène en pleine action pour éviter des conséquences"
+>Quitter une scène en pleine action pour éviter des conséquences</option><option value="Utiliser des logs pour combattre">Utiliser des logs pour combattre</option><option value="Enregistrer tous les combats"
+>Enregistrer tous les combats</option><option value="Faire des captures d’écran des combats">Faire des captures d’écran des combats</option></select></div><div class="question"><label for="q19"
+>19. Si un autre joueur commence une discussion HRP, tu devrais : *</label><select name="q19" id="q19" required><option value="Participer à la discussion">Participer à la discussion</option><option 
+value="L’ignorer et rester dans le personnage">L’ignorer et rester dans le personnage</option><option value="Lui rappeler gentiment de rester en RP">Lui rappeler gentiment de rester en RP</option><option 
+value="Quitter la scène">Quitter la scène</option></select></div><div class="question"><label for="q20">20. Que signifie l'expression "Backstory" ? *</label><select name="q20" id="q20" required><option 
+value="L'histoire personnelle de ton personnage">L'histoire personnelle de ton personnage</option><option value="Une commande de retour">Une commande de retour</option><option value="Une scène entre deux joueurs"
+>Une scène entre deux joueurs</option><option value="Un code pour appeler les admins">Un code pour appeler les admins</option></select></div><div class="question"><label for="q21">21. Dans un serveur RP immersif, 
+que signifie le terme "Fail RP" ? *</label><select name="q21" id="q21" required><option value="Ignorer une situation RP par ennui">Ignorer une situation RP par ennui</option><option 
+value="Un manque de respect des règles ou des comportements irréalistes">Un manque de respect des règles ou des comportements irréalistes</option><option 
+value="L'échec d'une mission dans le jeu">L'échec d'une mission dans le jeu</option><option value="Quand un admin intervient pour arrêter une scène"
+>Quand un admin intervient pour arrêter une scène</option></select></div><div class="question"><label for="q22">22. En RP, que signifie le terme "injury RP" ? *</label><select name="q22" id="q22" 
+required><option value="Un type de RP basé sur la médecine">Un type de RP basé sur la médecine</option><option value="Un style de RP où on simule les blessures et leurs conséquences"
+>Un style de RP où on simule les blessures et leurs conséquences</option><option value="Utiliser des armes pour attaquer un joueur blessé">Utiliser des armes pour attaquer un joueur blessé
+</option><option value="Avoir des soins immédiats après chaque scène">Avoir des soins immédiats après chaque scène</option></select></div><div class="question"><label for="q23">23. Ton personnage vient d'être arrêté 
+et emmené au poste de police. Pour rester en RP, tu devrais : *</label><select name="q23" id="q23" required><option value="Nier tous les faits et refuser la coopération">Nier tous les faits et refuser la coopération
+</option><option value="Engager un dialogue réaliste avec les policiers">Engager un dialogue réaliste avec les policiers</option><option value="Rire et plaisanter avec les policiers">Rire et plaisanter avec 
+les policiers</option><option value="Quitter le serveur dès que possible">Quitter le serveur dès que possible</option></select></div><div class="question"><label for="q24">24. Que signifie le terme "CK" 
+(Character Kill) dans le RP ? *</label><select name="q24" id="q24" required><option value="Une exclusion temporaire du serveur">Une exclusion temporaire du serveur</option><option 
+value="Une mort définitive et irrévocable de ton personnage">Une mort définitive et irrévocable de ton personnage</option><option value="Une mort qui dure jusqu'à la fin de la session"
+>Une mort qui dure jusqu'à la fin de la session</option><option value="La perte temporaire d’objets et d’argent">La perte temporaire d’objets et d’argent
+</option></select></div><div class="question"><label for="q25">25. Dans un RP immersif, si ton personnage est menacé avec une arme, quelle est la meilleure réaction ? *
+</label><select name="q25" id="q25" required><option value="Rester calme et tenter de combattre">Rester calme et tenter de combattre</option><option value="Tenter de fuir immédiatement"
+>Tenter de fuir immédiatement</option><option value="Suivre le "Fear RP" en obéissant aux ordres">Suivre le "Fear RP" en obéissant aux ordres</option><option value="Ignorer la menace et discuter"
+>Ignorer la menace et discuter</option></select></div><div class="question"><label for="q26">26. Le terme "ERP" (Erotic Roleplay) est : *</label><select name="q26" id="q26" required><option 
+value="Totalement interdit sur tous les serveurs">Totalement interdit sur tous les serveurs</option><option value="Une pratique de RP autorisée mais souvent encadrée par des règles strictes"
+>Une pratique de RP autorisée mais souvent encadrée par des règles strictes</option><option value="Un style de RP nécessitant un mod spécial">Un style de RP nécessitant un mod spécial</option><option 
+value="Un style de RP pour les forces de l’ordre">Un style de RP pour les forces de l’ordre</option></select></div><div class="question"><label for="q27">27. Que signifie "troll RP" ? *</label><select 
+name="q27" id="q27" required><option value="Se comporter de manière réaliste pour gagner l’estime des admins">Se comporter de manière réaliste pour gagner l’estime des admins</option><option 
+value="Faire des actions exagérées et hors contexte pour perturber le RP">Faire des actions exagérées et hors contexte pour perturber le RP</option><option value="Rester en retrait dans le RP"
+>Rester en retrait dans le RP</option><option value="Observer d’autres joueurs sans interagir">Observer d’autres joueurs sans interagir</option></select></div><div class="question"><label for="q28"
+>28. Parmi ces plats, lequel est un symbole culinaire de New York ? *</label><select name="q28" id="q28" required><option value="Le croissant">Le croissant</option><option value="La pizza à pâte épaisse"
+>La pizza à pâte épaisse</option><option value="Le bagel">Le bagel</option><option value="Le taco">Le taco</option></select></div><div class="question"><label for="q29">29. Quel est le rôle d'un "staff" 
+dans un serveur RP immersif ? *</label><select name="q29" id="q29" required><option value="Participer aux scènes de RP en tant que joueurs">Participer aux scènes de RP en tant que joueurs</option><option 
+alue="Assister les joueurs et faire respecter les règles de RP">Assister les joueurs et faire respecter les règles de RP</option><option value="Regarder les joueurs sans intervenir"
+>Regarder les joueurs sans intervenir</option><option value="Animer les scènes d'action uniquement">Animer les scènes d'action uniquement</option></select></div><div class="question"><label for="q30"
+>30. Si ton personnage connaît une information que tu as apprise HRP, que dois-tu faire ? *</label><select name="q30" id="q30" required><option value="Utiliser immédiatement cette information 
+pour gagner un avantage">Utiliser immédiatement cette information pour gagner un avantage</option><option value="Ne pas en tenir compte en RP, car ton personnage ne le sait pas">Ne pas en tenir 
+compte en RP, car ton personnage ne le sait pas</option><option value="Informer les autres personnages">Informer les autres personnages</option><option value="Demander aux admins de te donner un avantage"
+>Demander aux admins de te donner un avantage</option></select></div><div class="question"><label for="q31">31. Lorsque tu te retrouves face à une scène de "deathmatch" (DM) impliquant des joueurs inconnus, 
+que dois-tu faire pour rester en RP ? *</label><select name="q31" id="q31" required><option value="Jouer ton fear">Jouer ton fear</option><option value="Joindre le combat immédiatement">Joindre le combat 
+immédiatement</option><option value="Utiliser des armes pour intervenir">Utiliser des armes pour intervenir</option><option value="Signaler l'incident aux admins si cela semble HRP">Signaler l'incident aux 
+admins si cela semble HRP</option></select></div><div class="question"><label for="q32">32. Quelle est la priorité des forces de l’ordre (police, FBI) en RP ? *</label><select name="q32" id="q32" required>
+<option value="Faire respecter les lois uniquement">Faire respecter les lois uniquement</option><option value="Protéger les civils et respecter les procédures légales RP">Protéger les civils et respecter les 
+procédures légales RP</option><option value="Gagner tous les affrontements face aux criminels">Gagner tous les affrontements face aux criminels</option><option value="Traquer les factions illégales sans tenir 
+compte du RP">Traquer les factions illégales sans tenir compte du RP</option></select></div><div class="question"><label for="q33">33. Lorsqu’une organisation illégale contrôle un territoire, que doit-elle faire ? 
+*</label><select name="q33" id="q33" required><option value="Le défendre de manière RP en respectant l’immersion">Le défendre de manière RP en respectant l’immersion</option><option value="Exiger un tribut des civils
+sur le territoire">Exiger un tribut des civils sur le territoire</option><option value="Attaquer immédiatement toute autre faction qui s’approche">Attaquer immédiatement toute autre faction qui s’approche</option>
+<option value="Se cacher pour éviter les confrontations avec la police">Se cacher pour éviter les confrontations avec la police</option></select></div><div class="question"><label for="q34">34. Un EMS (ambulancier)
+peut-il refuser de soigner une victime ? *</label><select name="q34" id="q34" required><option value="Oui, si la victime est coupable d’un crime">Oui, si la victime est coupable d’un crime</option><option value=
+"Oui, s’il a d’autres priorités HRP">Oui, s’il a d’autres priorités HRP</option><option value="Non, il doit soigner tout le monde sans exception">Non, il doit soigner tout le monde sans exception</option><option
+value="Non, sauf si sa propre vie est en danger">Non, sauf si sa propre vie est en danger</option></select></div><div class="question"><label for="q35">35. Lorsqu’un joueur est tué en PK, que se passe-t-il pour
+son personnage ? *</label><select name="q35" id="q35" required><option value="Il doit quitter la faction à laquelle il appartient">Il doit quitter la faction à laquelle il appartient</option><option 
+value="Il perd tout son équipement et son argent">Il perd tout son équipement et son argent</option><option value="Il oublie les événements menant à sa mort, mais reste jouable"
+>Il oublie les événements menant à sa mort, mais reste jouable</option><option value="Il doit immédiatement créer un nouveau personnage">Il doit immédiatement créer un nouveau personnage
+</option></select></div><div class="question"><label for="q36">36. Que signifie une "trêve" entre deux factions en conflit ? *</label><select name="q36" id="q36" required><option 
+value="Une alliance permanente entre factions">Une alliance permanente entre factions</option><option value="Une pause dans les hostilités décidée et respectée en RP"
+>Une pause dans les hostilités décidée et respectée en RP</option><option value="Un accord pour échanger des informations HRP">Un accord pour échanger des informations HRP
+</option><option value="Une excuse pour reprendre les hostilités après un délai">Une excuse pour reprendre les hostilités après un délai</option></select></div><div 
+class="question"><label for="q37">37. Que doit faire un joueur s’il est menotté et fouillé par la police ? *</label><select name="q37" id="q37" required><option 
+value="Contester HRP si les policiers trouvent des objets illégaux">Contester HRP si les policiers trouvent des objets illégaux</option><option value="Tenter de s’enfuir immédiatement">Tenter de s’enfuir 
+immédiatement</option><option value="Jouer la scène sans contester HRP et respecter les règles">Jouer la scène sans contester HRP et respecter les règles</option><option 
+value="Quitter la scène en cas de désaccord">Quitter la scène en cas de désaccord</option></select></div><div class="question"><label 
+for="q38">38. Un membre de gang peut-il utiliser des véhicules de luxe pour ses déplacements quotidiens ? *</label><select name="q38" id="q38" required><option 
+value="Oui, s’il a les moyens financiers HRP">Oui, s’il a les moyens financiers HRP</option><option value="Non, cela va à l’encontre de l’immersion et de la mentalité US"
+>Non, cela va à l’encontre de l’immersion et de la mentalité US</option><option value="Oui, si cela impressionne les membres de sa faction">Oui, si cela impressionne les membres de sa faction
+</option><option value="Non, sauf pour des missions spécifiques du gang">Non, sauf pour des missions spécifiques du gang</option></select></div><div class="question"><label for="q39"
+>39. Comment se déroule un recrutement dans une mafia ou un cartel ? *</label><select name="q39" id="q39" required><option value="Via une simple demande HRP sur Discord"
+>Via une simple demande HRP sur Discord</option><option value="En rejoignant automatiquement après un paiement">En rejoignant automatiquement après un paiement
+</option><option value="En montrant ses capacités au combat lors d’un test HRP">En montrant ses capacités au combat lors d’un test HRP</option><option 
+value="Via des scènes RP approfondies incluant des tests de loyauté">Via des scènes RP approfondies incluant des tests de loyauté</option></select></div><div class="question">
+<label for="q40">40. Que faire si un joueur commence une fusillade sans raison ? *</label><select name="q40" id="q40" required><option value="L’ignorer et quitter la scène">L’ignorer 
+et quitter la scène</option><option value="Revenir après sa mort pour se venger">Revenir après sa mort pour se venger</option><option value="Jouer la scène puis signaler au staff après coup"
+>Jouer la scène puis signaler au staff après coup</option><option value="Engager directement une contre-attaque HRP">Engager directement une contre-attaque HRP</option></select></div><div 
+class="question"><label for="q41">41. Un civil peut-il participer à une transaction illégale sans conséquence ? *</label><select name="q41" id="q41" required><option value="Non, il doit s’attendre à des 
+représailles ou à une enquête policière">Non, il doit s’attendre à des représailles ou à une enquête policière</option><option value="Oui, s’il coopère avec les factions illégales">Oui, 
+s’il coopère avec les factions illégales</option><option value="Oui, tant qu’il n’est pas vu par la police">Oui, tant qu’il n’est pas vu par la police</option><option 
+value="Non, mais il peut utiliser HRP pour éviter les sanctions">Non, mais il peut utiliser HRP pour éviter les sanctions</option></select></div><div class="question"><label 
+for="q42">42. Quel est le surnom emblématique de la ville de New York ? *</label><select name="q42" id="q42" required><option value="La Ville de la Lumière"
+>La Ville de la Lumière</option><option value="La Grosse Pomme">La Grosse Pomme</option><option value="La Capitale du Monde">La Capitale du Monde
+</option><option value="La Ville Éternelle">La Ville Éternelle</option></select></div><input type="submit" value="Envoyer"></form></body></html>
+
+  <input type="submit" value="Envoyer ma demande">
+</form>
+
+<script>
+  const bonnesReponses = {
+    q1: "RP Individualiste",
+    q2: "Utiliser des moyens irréalistes pour accomplir des actions",
+    q3: "Rester au sol et simuler la douleur de manière réaliste",
+    q4: "Jouer avec une logique de peur face aux dangers",
+    q5: "Accepter la mort définitive du personnage",
+    q6: "Provoquer intentionnellement les forces de l'ordre",
+    q7: "Ignorer l'attaque et la signaler aux admins",
+    q8: "Jouer des scènes sans conflits directs",
+    q9: "Emote RP",
+    q10: "Agir de façon prudente en cas de menace de vie",
+    q11: "Officer",
+    q12: "Effacer ou annuler une scène",
+    q13: "D'utiliser des informations HRP",
+    q14: "Mort définitive d’un personnage",
+    q15: "Les interactions doivent paraître naturelles et réalistes",
+    q16: "Parler en dehors du personnage",
+    q17: "Informé le staff",
+    q18: "Quitter une scène en pleine action pour éviter des conséquences",
+    q19: "Lui rappeler gentiment de rester en RP",
+    q20: "L'histoire personnelle de ton personnage",
+    q21: "Un manque de respect des règles ou des comportements irréalistes",
+    q22: "Un style de RP où on simule les blessures et leurs conséquences",
+    q23: "Engager un dialogue réaliste avec les policiers",
+    q24: "Une mort définitive et irrévocable de ton personnage",
+    q25: "Suivre le \"Fear RP\" en obéissant aux ordres",
+    q26: "Une pratique de RP autorisée mais souvent encadrée par des règles strictes",
+    q27: "Faire des actions exagérées et hors contexte pour perturber le RP",
+    q28: "Le bagel",
+    q29: "Assister les joueurs et faire respecter les règles de RP",
+    q30: "Ne pas en tenir compte en RP, car ton personnage ne le sait pas",
+    q31: "Jouer ton fear",
+    q32: "Protéger les civils et respecter les procédures légales RP",
+    q33: "Le défendre de manière RP en respectant l’immersion",
+    q34: "Non, sauf si sa propre vie est en danger",
+    q35: "Il oublie les événements menant à sa mort, mais reste jouable",
+    q36: "Une pause dans les hostilités décidée et respectée en RP",
+    q37: "Jouer la scène sans contester HRP et respecter les règles",
+    q38: "Non, cela va à l’encontre de l’immersion et de la mentalité US",
+    q39: "Via des scènes RP approfondies incluant des tests de loyauté",
+    q40: "Jouer la scène puis signaler au staff après coup",
+    q41: "Non, il doit s’attendre à des représailles ou à une enquête policière",
+    q42: "La Grosse Pomme"
+  };
+
+  const seuilReussite = 35;
+
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let score = 0;
+
+    for (let key in bonnesReponses) {
+      const el = document.querySelector(`[name="${key}"]`);
+      if (el && el.value === bonnesReponses[key]) {
+        score++;
+      }
+    }
+
+    const pseudo = document.getElementById("discordName").value;
+    const rpName = document.getElementById("rpName").value;
+
+    if (score >= seuilReussite) {
+      alert(`✅ Bien joué ${pseudo} ! Tu as réussi le QCM avec ${score}/42 bonnes réponses.`);
+      sendToDiscord(pseudo, rpName, score);
+    } else {
+      alert(`❌ Tu as obtenu ${score}/42. Le minimum pour valider est ${seuilReussite}. Réessaie !`);
+    }
+  });
+
+  function sendToDiscord(pseudo, rpName, score, discordId) {
+  fetch('http://TON_IP_OU_DOMAINE:3000/whitelist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ discordId, rpName, score })
+  }).then(() => {
+    console.log("✅ Demande envoyée au bot.");
+  }).catch(() => {
+    console.error("❌ Échec de l'envoi au bot.");
+  });
+}
+
+</script>
+
+
+    }
+  </style>
+</head>
+<body>
+  <h1>YBN vous remercie</h1>
+    </section>
+  </main>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    const loginBtn = document.getElementById('loginBtn');
+
+    function getAccessTokenFromUrl() {
+      const hash = window.location.hash;
+      if (!hash) return null;
+      const params = new URLSearchParams(hash.substring(1));
+      return params.get('access_token');
+    }
+
+    async function fetchUserInfo(token) {
+      try {
+        const response = await fetch('https://discord.com/api/webhooks/1375278642439000176/l_kDa_Hy2Z-fn9KSrFwqs-4MZlkSbEO0dqWqRLIqiPPQllhKzXs7YewTxx5Q5xSSgKU1', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        if (!response.ok) throw new Error('Invalid token');
+        return await response.json();
+      } catch (e) {
+        console.error('Erreur lors de la récupération des infos Discord :', e);
+        return null;
+      }
+    }
+
+    async function handleLogin() {
+      const token = getAccessTokenFromUrl();
+
+      if (token) {
+        const user = await fetchUserInfo(token);
+        if (user) {
+          loginBtn.textContent = `Connecté : ${user.username}`;
+          loginBtn.href = "https://discord.com";
+        } else {
+          setLoginLink();
+        }
+      } else {
+        setLoginLink();
+      }
+    }
+
+    function setLoginLink() {
+      const clientId = "1375199865566531725";
+      const redirectUri = encodeURIComponent("https://ybnnass.github.io/ybn-njc-site/");
+      const scope = "identify";
+      const responseType = "token";
+      const discordOAuthURL = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+      loginBtn.href = discordOAuthURL;
+    }
+
+    handleLogin();
+  </script>
 </body>
 </html>
